@@ -1,4 +1,6 @@
-angular.module('app').directive('userInfoCard', function() {
+(function(_ng, _d) {
+    'use strict';
+
     var _controller = ['$scope', 'toaster', function($scope, toaster) {
         $scope.selectedFriend = {};
 
@@ -28,7 +30,7 @@ angular.module('app').directive('userInfoCard', function() {
 
         $scope.addFriend = function(friend) {
             $scope.user.friends.push(friend.name);
-        }
+        };
 
         $scope.nextState = function(user) {
             if (user.state < 2) {
@@ -36,40 +38,43 @@ angular.module('app').directive('userInfoCard', function() {
             } else {
                 user.state = 0;
             }
-        }
+        };
     }];
 
-    return {
-        templateUrl: "user/views/userInfoCard.tmpl.html",
-        restrict: "E",
-        scope: {
-            user: '=',
-            initialCollapsed: '@collapsed',
-        },
-        link: function(scope, el, attrs) {
-            scope.nextLevel = function() {
-                scope.user.level++;
-                scope.user.level = scope.user.level % 3;
-                var color = 'white';
-                switch (scope.user.level) {
-                    case 0:
-                        color = 'white';
-                        break;
-                    case 1:
-                        color = '#dae27d';
-                        break;
-                    case 2:
-                        color = 'green';
-                        break;
+    _d('userInfoCard', function() {
 
-                    default:
-                        color = 'white';
-                }
+        return {
+            templateUrl: "user/views/userInfoCard.tmpl.html",
+            restrict: "E",
+            scope: {
+                user: '=',
+                initialCollapsed: '@collapsed',
+            },
+            link: function(scope, el, attrs) {
+                scope.nextLevel = function() {
+                    scope.user.level++;
+                    scope.user.level = scope.user.level % 3;
+                    var color = 'white';
+                    switch (scope.user.level) {
+                        case 0:
+                            color = 'white';
+                            break;
+                        case 1:
+                            color = '#dae27d';
+                            break;
+                        case 2:
+                            color = 'green';
+                            break;
 
-                el.find('.panel-body').css('background-color', color);
-            };
-            scope.nextLevel()
-        },
-        controller: _controller
-    }
-});
+                        default:
+                            color = 'white';
+                    }
+
+                    el.find('.panel-body').css('background-color', color);
+                };
+                scope.nextLevel();
+            },
+            controller: _controller
+        };
+    });
+}(angular, angular.module('app').directive));
