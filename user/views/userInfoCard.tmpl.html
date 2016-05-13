@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-click="collapse()">{{user.name}}</div>
+    <div class="panel-body">
+        <div>
+            <address user="user"></address>
+        </div>
+        <div ng-show='!!user.address && !!isCollapsed'>
+            {{user.address.planet}}
+        </div>
+        <br/>
+
+        <div ng-show='!isCollapsed'>
+            <h4>Friends:</h4>
+            <ul>
+                <li ng-repeat='friend in user.friends'>
+                    {{friend}}
+
+                    <remove-friend method="removeFriend(friend)"></remove-friend>
+                </li>
+            </ul>
+            <div ng-show="!!user.rank">
+                Rank:
+                {{user.rank}}
+            </div>
+            <button ng-show="!user.rank" class="btn btn-success" ng-click="knightMe(user)">Knight Me</button>
+        </div>
+
+        <add-friend method="addFriend(friend)"></add-friend>
+    </div>
+    <button ng-click="nextState(user)">Next State</button><br />
+    {{user.state}}
+</div>

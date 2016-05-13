@@ -1,0 +1,21 @@
+{
+  "name": "adding-a-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Demaine <=> (=)",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-inject": "^4.0.0",
+    "gulp-watch": "^4.3.5",
+    "jquery": "^2.2.3"
+  }
+}

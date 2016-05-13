@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <head>
+        <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+        <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script data-require="bootstrap@*" data-semver="3.1.1" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.0.0/toaster.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/2.0.0/toaster.min.js"></script>
+
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/styles/style.css">
+        <!-- endinject -->
+
+        <!-- inject:js -->
+        <script src="/app.js"></script>
+        <script src="/routing.js"></script>
+        <script src="/templates.js"></script>
+        <script src="/controllers/MainCtrl.js"></script>
+        <script src="/decorator/dollars.js"></script>
+        <script src="/decorator/eventPause.js"></script>
+        <script src="/decorator/fontScale.js"></script>
+        <script src="/decorator/keyAnnouncer.js"></script>
+        <script src="/decorator/myClick.js"></script>
+        <script src="/decorator/spacebarSupport.js"></script>
+        <script src="/decorator/userClickSelect.js"></script>
+        <script src="/navigation/navigationMenu.js"></script>
+        <script src="/public/templates.js"></script>
+        <script src="/scoreboard/scorekeeper.js"></script>
+        <script src="/scoreboard/scores.js"></script>
+        <script src="/user/addFriend.js"></script>
+        <script src="/user/address.js"></script>
+        <script src="/user/removeFriend.js"></script>
+        <script src="/user/userInfoCard.js"></script>
+        <script src="/user/usertile.js"></script>
+        <!-- endinject -->
+    </head>
+
+    <body>
+        <toaster-container></toaster-container>
+        <navigation-menu></navigation-menu>
+        <div class="container">
+        <div ui-view></div>
+      </div>
+    </body>
+
+</html>
+
+</body>
+</html>
