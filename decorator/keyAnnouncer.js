@@ -12,4 +12,4 @@
             }
         };
     }]);
-}(angular, angular.module.directive));
+}(angular, angular.module('app').directive));
